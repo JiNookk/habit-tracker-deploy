@@ -23,7 +23,7 @@ class App extends Component {
       { id: 3, name: "Coding", count: 0 },
     ],
     navCount: 0,
-    // inputBasic: { id: "", name: "", count: 0 },
+    inputBasic: { id: "", name: "", count: 0 },
   };
 
   // handleNavCount = () => {
@@ -38,25 +38,25 @@ class App extends Component {
   //   console.log("hi");
   // };
 
-  // handleInput = () => {
-  //   console.log(this.grandChild.current.value);
+  handleInput = () => {
+    console.log(this.grandChild.current.value);
 
-  //   const habits = [...this.state.habits];
-  //   const inputBasic = { ...this.state.inputBasic };
-  //   const id = this.state.habits.length + 1;
-  //   const name = this.grandChild.current.value;
-  //   const count = 0;
+    const habits = [...this.state.habits];
+    const inputBasic = { ...this.state.inputBasic };
+    const id = this.state.habits.length + 1;
+    const name = this.grandChild.current.value;
+    const count = 0;
 
-  //   inputBasic.id = id;
-  //   inputBasic.name = name;
-  //   inputBasic.count = count;
+    inputBasic.id = id;
+    inputBasic.name = name;
+    inputBasic.count = count;
 
-  //   console.log(habits);
-  //   habits.push(inputBasic);
+    console.log(habits);
+    habits.push(inputBasic);
 
-  //   this.setState({ inputBasic });
-  //   this.setState({ habits });
-  // };
+    this.setState({ inputBasic });
+    this.setState({ habits });
+  };
 
   handleIncrement = (habit) => {
     console.log(`handleIncrement ${habit.name}`);
@@ -107,14 +107,6 @@ class App extends Component {
     this.setState({ habits });
   };
 
-  handleReset = () => {
-    const habits = this.state.habits.map((habit) => {
-      habit.count = 0;
-      return habit;
-    });
-    this.setState({ habits });
-  };
-
   render() {
     return (
       <div onClick={this.handleNavCount}>
@@ -128,14 +120,19 @@ class App extends Component {
         </header>
 
         <main>
+          <SearchField
+            onInput={this.handleInput}
+            grandChildRef={this.grandChild}
+          />
           <Habits
             habits={this.state.habits}
             onIncrement={this.handleIncrement}
             onDecrement={this.handleDecrement}
             onDelete={this.handleDelete}
             onAdd={this.handleAdd}
-            onReset={this.handleReset}
           />
+
+          <button className="habits-reset">Reset All</button>
         </main>
       </div>
     );

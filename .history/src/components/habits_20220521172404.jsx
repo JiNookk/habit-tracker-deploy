@@ -14,15 +14,10 @@ class Habits extends Component {
   // 1. + 누르면 >> 눌린 녀석(habit)의 정보 전달
   // 2. habit의 count++(setState)
 
-  handleAdd = (name) => {
-    this.props.onAdd(name);
-  };
-  //이벤트 핸들러를 선언하지 않고 바로 props에서 선언하면 안될까? >> 안되는 경우가 존재 : react hook에서 배울 것!
-
   render() {
     return (
       <>
-        <HabitAddForm onAdd={this.handleAdd} />
+        <HabitAddForm />
         <ul>
           {/* 이부분이 잘  안되는 것  같다!! 배열(객체)안에 어떤 것이든 자유자재로 담아서 활용하는 것! */}
           {this.props.habits.map((habit) => (
@@ -42,9 +37,6 @@ class Habits extends Component {
             </li>
           ))}
         </ul>
-        <button className="habits-reset" onClick={this.props.onReset}>
-          Reset All
-        </button>
       </>
     );
   }

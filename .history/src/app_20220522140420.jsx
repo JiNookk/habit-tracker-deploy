@@ -112,7 +112,6 @@ class App extends Component {
       habit.count = 0;
       return habit;
     });
-    this.setState({ habits });
   };
 
   render() {
