@@ -12,6 +12,7 @@ class Nav extends Component {
   // };
 
   render() {
+    console.log("nav");
     return (
       <>
         <nav className="navbar">

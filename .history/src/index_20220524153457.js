@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./app";
 import "@fortawesome/fontawesome-free/js/all.js";
-import SimpleHabit from "./components/simpleHabit";
+import SimpleHabit from "./components/simplehabit";
 
 // react : 순수 자바스크립트를 이용해서 컴포넌트를 만들어 나감
 // 브라우저가 이해할 수 있는 녀석 : html, css, js
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root노드안에 App.jsx를 렌더링한다.
 root.render(
   <React.StrictMode>
-    <App />
+    <SimpleHabit />
   </React.StrictMode>
 );
 // root.render 안의 내용이 html element로 변환되어서 브라우저에 전달된다!

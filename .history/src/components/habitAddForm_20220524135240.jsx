@@ -26,6 +26,6 @@ const HabitAddForm = memo((props) => {
     //   form에서는 버튼이 눌리면 submit이라는 이벤트가 발생한다. 따라서 onSubmit를 활용할 수 잇다.
     //   form태그에는 자동으로 submit이 내장되어 있음. input에서 enter 또는 button 클릭
   );
-});
+};);
 
 export default HabitAddForm;

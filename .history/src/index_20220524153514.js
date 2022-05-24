@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 // root노드안에 App.jsx를 렌더링한다.
 root.render(
   <React.StrictMode>
-    <App />
+    <SimpleHabit />
   </React.StrictMode>
 );
 // root.render 안의 내용이 html element로 변환되어서 브라우저에 전달된다!

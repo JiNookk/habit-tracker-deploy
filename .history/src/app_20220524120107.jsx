@@ -38,7 +38,6 @@ class App extends Component {
   handleDecrement = (habit) => {
     const habits = this.state.habits.map((item) => {
       if (item.id === habit.id) {
-        const count = habit.count;
         return { ...habit, count: count > 0 ? habit.count - 1 : 0 };
         // 뭐지? 어떻게 count에 바로접근가능하지
       }
@@ -69,9 +68,7 @@ class App extends Component {
 
   handleReset = () => {
     const habits = this.state.habits.map((habit) => {
-      if (habit.count != 0) {
-        return { ...habit, count: 0 };
-      }
+      habit.count = 0;
       return habit;
     });
     this.setState({ habits });
